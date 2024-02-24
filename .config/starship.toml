@@ -1,0 +1,293 @@
+### PRELUDE
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+${custom.venv}\
+$battery$directory$character
+"""
+
+right_format = """
+$git_branch$git_commit$git_state$git_status
+"""
+
+add_newline         = false
+scan_timeout        = 100
+command_timeout     = 100
+follow_symlinks     = true
+continuation_prompt = "[∙](bright-black) "
+
+[custom.venv]
+when    = 'test -n "$VIRTUAL_ENV"'
+command = 'echo "($(basename "$VIRTUAL_ENV"))"'
+style   = "yellow bold"
+
+# [custom.readme]
+# detect_files = ['README', 'README.md']
+# style = "red"
+# command = "wc -l README* | awk"
+# symbol = '󰑇'
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = false
+
+[shell]
+disabled = true
+
+[jobs]
+symbol = ""
+
+[battery]
+display = [ { style = "red bold", threshold = 20 } ]
+
+[cmd_duration]
+disabled = true
+min_time = 500
+format   = '[$duration](bold yellow) | '
+
+[character]
+# success_symbol = "[❯](purple)"
+# error_symbol   = "[❯](red)"
+
+[memory_usage]
+disabled = true
+symbol   = "󰍛 "
+format   = '\[$symbol[$ram]($style)\]'
+
+[directory]
+truncate_to_repo  = false
+truncation_length = 3
+truncation_symbol = "…/"
+read_only         = " 󰌾 "
+format            = '[$path]($style)[$read_only]($read_only_style) '
+
+[username]
+disabled    = false
+show_always = true
+style_user  = "green bold"
+style_root  = "red bold"
+format      = '[$user]($style)'
+
+[time]
+disabled    = true 
+time_format = "%R" # Hour:Minute Format
+style       = "#ffb378 bold"
+format      = '[  $time ]($style)'
+
+[git_branch]
+disabled          = false
+truncation_length = 25
+truncation_symbol = ''
+symbol            = ""
+format            = '[$symbol $branch]($style)'
+
+[git_commit]
+commit_hash_length = 4
+format             = '[(#$hash$tag)]($style)'
+
+[git_metrics]
+disabled = false
+format   = "([+$added]($added_style) )([-$deleted]($deleted_style) )"
+
+[git_state]
+format = "\\([$state( $progress_current/$progress_total)]($style)\\) "
+
+[git_status]
+disabled   = false # disable for speed in large directories
+up_to_date = ''
+deleted    = '  ${count}'
+conflicted = '  ${count}'
+modified   = '  ${count}'
+untracked  = '  ${count}'
+stashed    = ' 󰿦 ${count}'
+format     = '( \[[$all_status$ahead_behind]($style) \])'
+ahead      = ' 󰜷 ${count}'
+diverged   = ' 󰜷 ${ahead_count} 󰜮 ${behind_count}'
+behind     = ' 󰜮 ${count}'
+staged     = '  ${count}'
+
+### Languages / technologies ###
+[aws]
+symbol = " "
+
+[azure]
+symbol = " "
+
+[buf]
+symbol = "󰚉 "
+
+[bun]
+symbol = "🍞 "
+
+[c]
+symbol = " "
+
+[cmake]
+symbol = "󰔶 "
+
+[cobol]
+symbol = " "
+
+[conda]
+symbol = "🅒 "
+
+[container]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[daml]
+symbol = "Λ "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = "🦕 "
+
+[docker_context]
+symbol = " "
+
+[dotnet]
+symbol = "󰪮 "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[erlang]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[gcloud]
+symbol = "󱇶 "
+
+[golang]
+symbol = " "
+
+[gradle]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[helm]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kubernetes]
+symbol = "󱃾 "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[meson]
+symbol = "󰯙 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = "󰎙 "
+
+[ocaml]
+symbol = " "
+
+[opa]
+symbol = "🪖 "
+
+[openstack]
+symbol = "󱗽 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pulumi]
+symbol = " "
+
+[purescript]
+symbol = " "
+
+[python]
+symbol = " "
+
+[raku]
+symbol = " "
+
+[red]
+symbol = "🔺 "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = "󰴭 "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[singularity]
+symbol = "󰰢 "
+
+[solidity]
+symbol = " "
+
+[spack]
+symbol = "󰜋 "
+
+[swift]
+symbol = " "
+
+[terraform]
+symbol = " "
+
+[typst]
+symbol = "t "
+
+[vagrant]
+symbol = "V "
+
+[vlang]
+symbol = " "
+
+[zig]
+symbol = " "
+
