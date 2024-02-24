@@ -1,0 +1,29 @@
+[include]
+  path = ~/.config/delta/themes/mocha.gitconfig
+
+[user]
+  name = kfernandez31
+  email = kacper.fernandez@gmail.com
+
+[core]
+  pager = delta
+
+[delta]
+  features = catppuccin-mocha
+  hyperlinks = true
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}" # TODO: configure for nvim
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+  true-color = always
+  
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
